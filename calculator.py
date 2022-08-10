@@ -15,7 +15,7 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 continue_work = True
 
 while continue_work:
-    user_question = input("Please type what operation would your like to do, choose an operation from: add, subtract, multiply, divide, square, cube, power, mod. Followed by the numbers you would like to operate with: ")
+    user_question = input("Please type what operation would your like to do, choose an operation from: add, subtract, multiply, divide, square, cube, power, mod. Followed by the numbers you would like to operate with, or enter 'q' for quite the program: ")
     tokenize = user_question.split(" ")
     operator = tokenize[0]
     if operator == "q":
@@ -30,3 +30,22 @@ while continue_work:
                     print(cube(index_1))           
             else:
                 print("This operator takes only 1 number.")
+        elif operator in ["add", "subtract", "multiply", "divide", "power", "mod"]:
+            if len(tokenize) == 3:
+                argument_1 = float(tokenize[1])
+                argument_2 = float(tokenize[2])
+                if operator == "add":
+                    print(add(argument_1, argument_2))
+                if operator == "subtract":
+                    print(subtratc(argument_1, argument_2)) 
+                if operator == "divide":
+                    print(divide(argument_1, argument_2))   
+                if operator == "power":
+                    print(power(argument_1, argument_2)) 
+                if operator == "mod":
+                    print(mod(argument_1, argument_2))     
+            else:
+                print("This operator takes in 2 numbers.")     
+        else:
+            print("Incorrect input.")
+
